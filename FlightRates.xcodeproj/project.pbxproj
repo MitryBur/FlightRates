@@ -1,0 +1,270 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		484AA6B613F995C700768879 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 484AA6B513F995C700768879 /* UIKit.framework */; };
+		484AA6B813F995C700768879 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 484AA6B713F995C700768879 /* Foundation.framework */; };
+		484AA6BA13F995C700768879 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 484AA6B913F995C700768879 /* CoreGraphics.framework */; };
+		484AA6C013F995C700768879 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 484AA6BE13F995C700768879 /* InfoPlist.strings */; };
+		484AA6C213F995C700768879 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 484AA6C113F995C700768879 /* main.m */; };
+		484AA6C613F995C700768879 /* FlightRatesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 484AA6C513F995C700768879 /* FlightRatesAppDelegate.m */; };
+		484AA6C913F995C700768879 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 484AA6C713F995C700768879 /* MainWindow.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		484AA6B113F995C700768879 /* FlightRates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlightRates.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		484AA6B513F995C700768879 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		484AA6B713F995C700768879 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		484AA6B913F995C700768879 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		484AA6BD13F995C700768879 /* FlightRates-Info.plist */ = {isa = PBXFileReference; path = "FlightRates-Info.plist"; sourceTree = "<group>"; };
+		484AA6BF13F995C700768879 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		484AA6C113F995C700768879 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		484AA6C313F995C700768879 /* FlightRates-Prefix.pch */ = {isa = PBXFileReference; path = "FlightRates-Prefix.pch"; sourceTree = "<group>"; };
+		484AA6C413F995C700768879 /* FlightRatesAppDelegate.h */ = {isa = PBXFileReference; path = FlightRatesAppDelegate.h; sourceTree = "<group>"; };
+		484AA6C513F995C700768879 /* FlightRatesAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlightRatesAppDelegate.m; sourceTree = "<group>"; };
+		484AA6C813F995C700768879 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		484AA6AE13F995C700768879 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				484AA6B613F995C700768879 /* UIKit.framework in Frameworks */,
+				484AA6B813F995C700768879 /* Foundation.framework in Frameworks */,
+				484AA6BA13F995C700768879 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		484AA6A613F995C700768879 = {
+			isa = PBXGroup;
+			children = (
+				484AA6BB13F995C700768879 /* FlightRates */,
+				484AA6B413F995C700768879 /* Frameworks */,
+				484AA6B213F995C700768879 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		484AA6B213F995C700768879 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				484AA6B113F995C700768879 /* FlightRates.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		484AA6B413F995C700768879 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				484AA6B513F995C700768879 /* UIKit.framework */,
+				484AA6B713F995C700768879 /* Foundation.framework */,
+				484AA6B913F995C700768879 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		484AA6BB13F995C700768879 /* FlightRates */ = {
+			isa = PBXGroup;
+			children = (
+				484AA6C413F995C700768879 /* FlightRatesAppDelegate.h */,
+				484AA6C513F995C700768879 /* FlightRatesAppDelegate.m */,
+				484AA6C713F995C700768879 /* MainWindow.xib */,
+				484AA6BC13F995C700768879 /* Supporting Files */,
+			);
+			path = FlightRates;
+			sourceTree = "<group>";
+		};
+		484AA6BC13F995C700768879 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				484AA6BD13F995C700768879 /* FlightRates-Info.plist */,
+				484AA6BE13F995C700768879 /* InfoPlist.strings */,
+				484AA6C113F995C700768879 /* main.m */,
+				484AA6C313F995C700768879 /* FlightRates-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		484AA6B013F995C700768879 /* FlightRates */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 484AA6CC13F995C700768879 /* Build configuration list for PBXNativeTarget "FlightRates" */;
+			buildPhases = (
+				484AA6AD13F995C700768879 /* Sources */,
+				484AA6AE13F995C700768879 /* Frameworks */,
+				484AA6AF13F995C700768879 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlightRates;
+			productName = FlightRates;
+			productReference = 484AA6B113F995C700768879 /* FlightRates.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		484AA6A813F995C700768879 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 484AA6AB13F995C700768879 /* Build configuration list for PBXProject "FlightRates" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 484AA6A613F995C700768879;
+			productRefGroup = 484AA6B213F995C700768879 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				484AA6B013F995C700768879 /* FlightRates */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		484AA6AF13F995C700768879 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				484AA6C013F995C700768879 /* InfoPlist.strings in Resources */,
+				484AA6C913F995C700768879 /* MainWindow.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		484AA6AD13F995C700768879 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				484AA6C213F995C700768879 /* main.m in Sources */,
+				484AA6C613F995C700768879 /* FlightRatesAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		484AA6BE13F995C700768879 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				484AA6BF13F995C700768879 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		484AA6C713F995C700768879 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				484AA6C813F995C700768879 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		484AA6CA13F995C700768879 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		484AA6CB13F995C700768879 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		484AA6CD13F995C700768879 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FlightRates/FlightRates-Prefix.pch";
+				INFOPLIST_FILE = "FlightRates/FlightRates-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		484AA6CE13F995C700768879 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FlightRates/FlightRates-Prefix.pch";
+				INFOPLIST_FILE = "FlightRates/FlightRates-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		484AA6AB13F995C700768879 /* Build configuration list for PBXProject "FlightRates" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				484AA6CA13F995C700768879 /* Debug */,
+				484AA6CB13F995C700768879 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		484AA6CC13F995C700768879 /* Build configuration list for PBXNativeTarget "FlightRates" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				484AA6CD13F995C700768879 /* Debug */,
+				484AA6CE13F995C700768879 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 484AA6A813F995C700768879 /* Project object */;
+}
