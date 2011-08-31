@@ -118,7 +118,7 @@
     NSLog(@"Prerelease");
     
     //[pins release];
-    NSLog(@"Postrelease");
+    NSLog(@"Postrelease_");
     
     
 }
