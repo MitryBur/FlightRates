@@ -8,10 +8,11 @@
 
 #import "MapViewController.h"
 #import "FlightRatesAppDelegate.h"
+#import "AirportClusterManager.h"
 
 
-#define DEFAULT_SPAN_LATITUDE 10
-#define DEFAULT_SPAN_LONGITUDE 10
+#define DEFAULT_SPAN_LATITUDE 5
+#define DEFAULT_SPAN_LONGITUDE 5
 
 //Comment this to hide route between departure and destination points on a map
 #define SHOW_OVERLAY_ROUTE
@@ -22,7 +23,8 @@
 @synthesize flightData = _flightData;
 @synthesize routeLine = _routeLine;
 @synthesize originalZoom = _originalZoom;
-
+@synthesize pins = _pins;
+@synthesize lastClusterizedAnnotations = _lastClusterizedAnnotations;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -44,11 +46,11 @@
 #pragma mark - View lifecycle
 
 /*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView
-{
-}
-*/
+ // Implement loadView to create a view hierarchy programmatically, without using a nib.
+ - (void)loadView
+ {
+ }
+ */
 
 
 - (void) showStartPosition
@@ -79,39 +81,46 @@
     
     AirportAnnotation *tempAnnotation = [[AirportAnnotation alloc] initWithCoordinate:location];
     tempAnnotation.title = @"city";
-                           
-   // tempAnnotation.subtitle = [NSString stringWithFormat:@"%Стоимость перелета %@ %@", [ objectForKey:@"price"], 
-     //                          [destinationAnnotationData objectForKey:@"currency"]];
+    
+    // tempAnnotation.subtitle = [NSString stringWithFormat:@"%Стоимость перелета %@ %@", [ objectForKey:@"price"], 
+    //                          [destinationAnnotationData objectForKey:@"currency"]];
     //Not departure point 
-
+    
     
     [self.mapView addAnnotation:tempAnnotation];
     [tempAnnotation release];
-
+    
     NSLog(@"MapViewController: items = %d", [self.flightData.sourceFlightData count]);
     
-    NSMutableArray *pins = [NSMutableArray array];
+    self.pins = [[NSMutableArray alloc] init] ;
     
-    for(int i=0;i<50;i++) {
-        CGFloat latDelta = rand()*0.125/RAND_MAX - 0.02;
-        CGFloat lonDelta = rand()*0.130/RAND_MAX - 0.08;
+    for(int i=0;i<1000;i++) {
+        CGFloat latDelta = (rand()*1.0/RAND_MAX)*130+10;
+        CGFloat lonDelta = (rand()*1.0/RAND_MAX)*130+10;
         
-        CGFloat lat = 51.21992;
-        CGFloat lng = 4.39625;
+        CGFloat lat = 0;
+        CGFloat lng = 0;
         
         
         CLLocationCoordinate2D newCoord = {lat+latDelta, lng+lonDelta};
         AirportAnnotation *pin = [[AirportAnnotation alloc] initWithCoordinate:newCoord];
         pin.title = [NSString stringWithFormat:@"Pin %i",i+1];;
         pin.subtitle = [NSString stringWithFormat:@"Pin %i subtitle",i+1];
-        [pins addObject:pin];
+        [self.pins addObject:pin];
         [pin release]; 
     }
+    //  if (self.mapView == nil)
+    {
+        NSLog(@"Map nil %i %i",[self.pins count],[[self.mapView overlays] count]);
+    }
+    [self.mapView addAnnotations:self.pins]; 
+    self.lastClusterizedAnnotations = self.pins;
+    NSLog(@"Prerelease");
     
-    [self.mapView addAnnotations:pins]; 
-    [pins release];
-
-
+    //[pins release];
+    NSLog(@"Postrelease");
+    
+    
 }
 
 - (MKAnnotationView *) mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>) annotation
@@ -128,18 +137,18 @@
     {
         annotationView.pinColor = MKPinAnnotationColorGreen;
         annotationView.animatesDrop = YES;
-
+        
     }
     else
     {
         annotationView.pinColor = MKPinAnnotationColorRed;
         annotationView.animatesDrop = NO;
-
+        
     }
     annotationView.canShowCallout = YES;
     annotationView.calloutOffset = CGPointMake(-5 , 5);
     
-
+    
     return annotationView;
 }
 
@@ -157,9 +166,8 @@
     self.routeLine = [MKPolygon polygonWithCoordinates:points count:2];
     
     [self.mapView addOverlay:self.routeLine];
-
+    
 }
-#endif
 
 - (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id <MKOverlay>)overlay{
     
@@ -172,6 +180,7 @@
     return polyLineView;
 }
 
+#endif
 
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
@@ -179,18 +188,18 @@
 {
     [super viewDidLoad];
     [self showStartPosition];
-  /*  MapGestureRecognizer *changeMapPositionRecognizer = [[MapGestureRecognizer alloc] init];
-    changeMapPositionRecognizer.touchesEndedCallback = ^(NSSet * touches, UIEvent * event) 
-    {
-        
-        [self.mapView removeAnnotations:self.flightData.destinationAnnotations];
-        //[NSThread sleepForTimeInterval:1.0];
-        [self.mapView addAnnotations:self.flightData.destinationAnnotations];
-
-
-    };
-    [self.mapView addGestureRecognizer:changeMapPositionRecognizer];
-    [changeMapPositionRecognizer release];*/
+    /*  MapGestureRecognizer *changeMapPositionRecognizer = [[MapGestureRecognizer alloc] init];
+     changeMapPositionRecognizer.touchesEndedCallback = ^(NSSet * touches, UIEvent * event) 
+     {
+     
+     [self.mapView removeAnnotations:self.flightData.destinationAnnotations];
+     //[NSThread sleepForTimeInterval:1.0];
+     [self.mapView addAnnotations:self.flightData.destinationAnnotations];
+     
+     
+     };
+     [self.mapView addGestureRecognizer:changeMapPositionRecognizer];
+     [changeMapPositionRecognizer release];*/
     UIPinchGestureRecognizer *pinchGestureRecognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinch:)];
     pinchGestureRecognizer.delegate = self;
     [self.mapView addGestureRecognizer:pinchGestureRecognizer];
@@ -203,7 +212,7 @@
     [self.mapView addGestureRecognizer:dubTapGestureRecognizer];
     [dubTapGestureRecognizer release];
     
-
+    
 }
 
 - (void) handlePinch:(UIGestureRecognizer *)pinchGestureRecognizer
@@ -211,19 +220,26 @@
     switch (pinchGestureRecognizer.state) {
         case UIGestureRecognizerStateBegan:
             [self.mapView removeAnnotations:self.flightData.destinationAnnotations];
+            
+            [self.mapView removeAnnotations:self.lastClusterizedAnnotations];
+            
             if (self.routeLine != nil) {
                 [self.mapView removeOverlay:self.routeLine];
             }
             NSLog(@"Pinch began recognized");
-
+            
             break;
         case UIGestureRecognizerStateEnded:
             [self.mapView addAnnotations:self.flightData.destinationAnnotations];
+            
+            self.lastClusterizedAnnotations = [AirportClusters clusterizeAnnotations:self.lastClusterizedAnnotations byRegion:self.mapView.region]; 
+            [self.mapView addAnnotations:self.lastClusterizedAnnotations]; 
+            
             if (self.routeLine != nil) {
-                [self.mapView addOverlay:self.routeLine];
+                // [self.mapView addOverlay:self.routeLine];
             }
             NSLog(@"Pinch end recognized");
-
+            
             break;            
         default:
             NSLog(@"Pinch not finished");
@@ -281,7 +297,8 @@
     [_mapView release];
     [_flightData release];
     [_routeLine release];
-
+    [_pins release];
+    [_lastClusterizedAnnotations release];
     [super dealloc];
 }
 

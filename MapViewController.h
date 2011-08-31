@@ -21,6 +21,11 @@
 
 @property (nonatomic, assign) MKZoomScale originalZoom;
 
+@property (nonatomic, retain) NSMutableArray *pins;
+
+@property (nonatomic, retain) NSArray *lastClusterizedAnnotations;
+
+
 // Initializes map and shows start position on it
 - (void) showStartPosition;
 

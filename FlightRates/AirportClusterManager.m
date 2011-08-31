@@ -51,23 +51,48 @@
     return self;
 }
 
-+ (void)clusterizeAnnotations: (NSArray *)annotations byRegion: (MKCoordinateRegion) region 
++ (NSArray *)clusterizeAnnotations: (NSArray *)annotations byRegion: (MKCoordinateRegion) region 
 {
-    NSInteger gridSizeX;
-    NSInteger gridSizeY;
-
+    CGFloat gridSizeX;
+    CGFloat gridSizeY;
+    CGFloat mapSizeX;
+    CGFloat mapSizeY;
     if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)] && [[UIScreen mainScreen] scale] == 2)
     {
-        gridSizeX = 360*480/region.span.longitudeDelta;
-        gridSizeY = 180*640/region.span.latitudeDelta;
+        mapSizeX = 360*480/region.span.longitudeDelta;
+        mapSizeY = 180*640/region.span.latitudeDelta;
 
     }
     else
     {
-        gridSizeX = 360*480/region.span.longitudeDelta;
-        gridSizeY = 180*640/region.span.latitudeDelta;
+        mapSizeX = 360*480/region.span.longitudeDelta;
+        mapSizeY = 180*640/region.span.latitudeDelta;
 
     }
+    gridSizeX = 32*2/mapSizeX*360; 
+    gridSizeY = 39*2/mapSizeY*180; 
+    NSMutableDictionary *pins = [[NSMutableDictionary alloc] init];
+    int i=0;
+    for (AirportAnnotation *tempAnnotation in annotations) {
+        NSInteger row = (NSInteger) (tempAnnotation.coordinate.latitude/gridSizeY);
+        NSInteger col = (NSInteger) (tempAnnotation.coordinate.longitude/gridSizeX);
+        NSString *key = [NSString stringWithFormat:@"row:%i-col:%i",row,col];
+        NSLog(key);
+        CLLocationCoordinate2D location;
+        location.latitude= row*gridSizeY+gridSizeY/2;
+        location.longitude= col*gridSizeX+gridSizeX/2;
+
+        AirportAnnotation *pin = [[AirportAnnotation alloc] initWithCoordinate:location];
+        pin.title = [NSString stringWithFormat:@"Cluster %i",i];
+        pin.subtitle = [NSString stringWithFormat:@"Cluser"];
+        if([pins objectForKey:key] == nil)
+        {
+            [pins setObject:pin forKey:key];
+        }
+        [pin release];         
+        i++;
+    }
+    return [pins allValues];
     //for(AirportAnnotation tempAnnotation in annotations)
 }
 

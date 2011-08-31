@@ -8,6 +8,7 @@
 
 #import "AirportAnnotation.h"
 #import <MapKit/MapKit.h>
+#import <Foundation/Foundation.h>
 
 
 @interface SingleAirportCluster : AirportAnnotation
@@ -23,7 +24,7 @@
 @property (nonatomic, assign) NSInteger gridSizeByLatitude;
 @property (nonatomic, assign) NSInteger gridSizeByLongitude;
 
-
++ (NSArray *)clusterizeAnnotations: (NSArray *)annotations byRegion: (MKCoordinateRegion) region;
 
 @end
 

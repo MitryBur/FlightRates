@@ -14,6 +14,18 @@
 		484AA6C213F995C700768879 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 484AA6C113F995C700768879 /* main.m */; };
 		484AA6C613F995C700768879 /* FlightRatesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 484AA6C513F995C700768879 /* FlightRatesAppDelegate.m */; };
 		484AA6C913F995C700768879 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 484AA6C713F995C700768879 /* MainWindow.xib */; };
+		484AA6D713F996DE00768879 /* MapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 484AA6D513F996DE00768879 /* MapView.xib */; };
+		484AA6DA13F9990B00768879 /* FlightData.m in Sources */ = {isa = PBXBuildFile; fileRef = 484AA6D913F9990B00768879 /* FlightData.m */; };
+		484AA6DD13F99A3200768879 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 484AA6DC13F99A3200768879 /* MapViewController.m */; };
+		4885834D13F99E91000CB6C9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4885834C13F99E91000CB6C9 /* MapKit.framework */; };
+		4885835A13F9AFF6000CB6C9 /* LEDPoints.json in Resources */ = {isa = PBXBuildFile; fileRef = 4885835913F9AFF6000CB6C9 /* LEDPoints.json */; };
+		488583AB13F9BA53000CB6C9 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 488583A713F9BA53000CB6C9 /* CHANGELOG.md */; };
+		488583AC13F9BA53000CB6C9 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 488583A913F9BA53000CB6C9 /* JSONKit.m */; };
+		488583AD13F9BA53000CB6C9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 488583AA13F9BA53000CB6C9 /* README.md */; };
+		488583B013FC41AD000CB6C9 /* AirportAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 488583AF13FC41AD000CB6C9 /* AirportAnnotation.m */; };
+		4887417513FC81D700A5D55F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4887417413FC81D600A5D55F /* CoreLocation.framework */; };
+		4887419113FD1B6D00A5D55F /* stubIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4887419013FD1B6D00A5D55F /* stubIcon.png */; };
+		48F33A07140434E700793CFB /* AirportClusterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F33A06140434E700793CFB /* AirportClusterManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,13 +33,30 @@
 		484AA6B513F995C700768879 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		484AA6B713F995C700768879 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		484AA6B913F995C700768879 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		484AA6BD13F995C700768879 /* FlightRates-Info.plist */ = {isa = PBXFileReference; path = "FlightRates-Info.plist"; sourceTree = "<group>"; };
+		484AA6BD13F995C700768879 /* FlightRates-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FlightRates-Info.plist"; sourceTree = "<group>"; };
 		484AA6BF13F995C700768879 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		484AA6C113F995C700768879 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		484AA6C313F995C700768879 /* FlightRates-Prefix.pch */ = {isa = PBXFileReference; path = "FlightRates-Prefix.pch"; sourceTree = "<group>"; };
-		484AA6C413F995C700768879 /* FlightRatesAppDelegate.h */ = {isa = PBXFileReference; path = FlightRatesAppDelegate.h; sourceTree = "<group>"; };
+		484AA6C313F995C700768879 /* FlightRates-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FlightRates-Prefix.pch"; sourceTree = "<group>"; };
+		484AA6C413F995C700768879 /* FlightRatesAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlightRatesAppDelegate.h; sourceTree = "<group>"; };
 		484AA6C513F995C700768879 /* FlightRatesAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlightRatesAppDelegate.m; sourceTree = "<group>"; };
 		484AA6C813F995C700768879 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		484AA6D513F996DE00768879 /* MapView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapView.xib; sourceTree = "<group>"; };
+		484AA6D813F9990B00768879 /* FlightData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlightData.h; sourceTree = "<group>"; };
+		484AA6D913F9990B00768879 /* FlightData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlightData.m; sourceTree = "<group>"; };
+		484AA6DB13F99A3200768879 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapViewController.h; path = ../MapViewController.h; sourceTree = "<group>"; };
+		484AA6DC13F99A3200768879 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapViewController.m; path = ../MapViewController.m; sourceTree = "<group>"; };
+		4885834C13F99E91000CB6C9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		4885835913F9AFF6000CB6C9 /* LEDPoints.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LEDPoints.json; sourceTree = "<group>"; };
+		488583A713F9BA53000CB6C9 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.md; sourceTree = "<group>"; };
+		488583A813F9BA53000CB6C9 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		488583A913F9BA53000CB6C9 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		488583AA13F9BA53000CB6C9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		488583AE13FC41AD000CB6C9 /* AirportAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirportAnnotation.h; sourceTree = "<group>"; };
+		488583AF13FC41AD000CB6C9 /* AirportAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AirportAnnotation.m; sourceTree = "<group>"; };
+		4887417413FC81D600A5D55F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		4887419013FD1B6D00A5D55F /* stubIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = stubIcon.png; path = ../stubIcon.png; sourceTree = "<group>"; };
+		48F33A05140434E700793CFB /* AirportClusterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirportClusterManager.h; sourceTree = "<group>"; };
+		48F33A06140434E700793CFB /* AirportClusterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AirportClusterManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +64,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4887417513FC81D700A5D55F /* CoreLocation.framework in Frameworks */,
+				4885834D13F99E91000CB6C9 /* MapKit.framework in Frameworks */,
 				484AA6B613F995C700768879 /* UIKit.framework in Frameworks */,
 				484AA6B813F995C700768879 /* Foundation.framework in Frameworks */,
 				484AA6BA13F995C700768879 /* CoreGraphics.framework in Frameworks */,
@@ -64,6 +95,9 @@
 		484AA6B413F995C700768879 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				488583A613F9BA53000CB6C9 /* JSONKit */,
+				4887417413FC81D600A5D55F /* CoreLocation.framework */,
+				4885834C13F99E91000CB6C9 /* MapKit.framework */,
 				484AA6B513F995C700768879 /* UIKit.framework */,
 				484AA6B713F995C700768879 /* Foundation.framework */,
 				484AA6B913F995C700768879 /* CoreGraphics.framework */,
@@ -77,6 +111,15 @@
 				484AA6C413F995C700768879 /* FlightRatesAppDelegate.h */,
 				484AA6C513F995C700768879 /* FlightRatesAppDelegate.m */,
 				484AA6C713F995C700768879 /* MainWindow.xib */,
+				484AA6DB13F99A3200768879 /* MapViewController.h */,
+				484AA6DC13F99A3200768879 /* MapViewController.m */,
+				484AA6D513F996DE00768879 /* MapView.xib */,
+				484AA6D813F9990B00768879 /* FlightData.h */,
+				484AA6D913F9990B00768879 /* FlightData.m */,
+				488583AE13FC41AD000CB6C9 /* AirportAnnotation.h */,
+				488583AF13FC41AD000CB6C9 /* AirportAnnotation.m */,
+				48F33A05140434E700793CFB /* AirportClusterManager.h */,
+				48F33A06140434E700793CFB /* AirportClusterManager.m */,
 				484AA6BC13F995C700768879 /* Supporting Files */,
 			);
 			path = FlightRates;
@@ -86,11 +129,25 @@
 			isa = PBXGroup;
 			children = (
 				484AA6BD13F995C700768879 /* FlightRates-Info.plist */,
+				4887419013FD1B6D00A5D55F /* stubIcon.png */,
 				484AA6BE13F995C700768879 /* InfoPlist.strings */,
 				484AA6C113F995C700768879 /* main.m */,
 				484AA6C313F995C700768879 /* FlightRates-Prefix.pch */,
+				4885835913F9AFF6000CB6C9 /* LEDPoints.json */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		488583A613F9BA53000CB6C9 /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				488583A713F9BA53000CB6C9 /* CHANGELOG.md */,
+				488583A813F9BA53000CB6C9 /* JSONKit.h */,
+				488583A913F9BA53000CB6C9 /* JSONKit.m */,
+				488583AA13F9BA53000CB6C9 /* README.md */,
+			);
+			name = JSONKit;
+			path = "FlightRates/johnezang-JSONKit-c2146ff";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +199,11 @@
 			files = (
 				484AA6C013F995C700768879 /* InfoPlist.strings in Resources */,
 				484AA6C913F995C700768879 /* MainWindow.xib in Resources */,
+				484AA6D713F996DE00768879 /* MapView.xib in Resources */,
+				4885835A13F9AFF6000CB6C9 /* LEDPoints.json in Resources */,
+				488583AB13F9BA53000CB6C9 /* CHANGELOG.md in Resources */,
+				488583AD13F9BA53000CB6C9 /* README.md in Resources */,
+				4887419113FD1B6D00A5D55F /* stubIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +216,11 @@
 			files = (
 				484AA6C213F995C700768879 /* main.m in Sources */,
 				484AA6C613F995C700768879 /* FlightRatesAppDelegate.m in Sources */,
+				484AA6DA13F9990B00768879 /* FlightData.m in Sources */,
+				484AA6DD13F99A3200768879 /* MapViewController.m in Sources */,
+				488583AC13F9BA53000CB6C9 /* JSONKit.m in Sources */,
+				488583B013FC41AD000CB6C9 /* AirportAnnotation.m in Sources */,
+				48F33A07140434E700793CFB /* AirportClusterManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,7 +265,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -215,7 +282,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -228,7 +295,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FlightRates/FlightRates-Prefix.pch";
 				INFOPLIST_FILE = "FlightRates/FlightRates-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -239,7 +308,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FlightRates/FlightRates-Prefix.pch";
 				INFOPLIST_FILE = "FlightRates/FlightRates-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -263,6 +334,7 @@
 				484AA6CE13F995C700768879 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

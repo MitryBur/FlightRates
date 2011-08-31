@@ -1,0 +1,47 @@
+{
+    "departure" : {
+        "country" : "Россия",
+        "city" : "Санкт-Петербург",
+        "airport" : "Пулково (LED)",
+        "latitude" : 59.800278, 
+        "longitude" : 30.2625
+    },
+    "arrivals" : [
+        { 
+            "country" : "Великобритания",
+            "city" : "Лондон",
+            "airport" : "Гатвик (LGW)",
+            "latitude" : 51.148056, 
+            "longitude" : -0.190278,
+            "price" : 20000,
+            "currency" : "руб."
+        },
+        { 
+            "country" : "Германия",
+            "city" : "Франкфурт",
+            "airport" : "Франкфурт (FRA)",
+            "latitude" : 50.033333, 
+            "longitude" : 8.566667,
+            "price" : 15000,
+            "currency" : "руб."
+        },
+        { 
+            "country" : "Финляндия",
+            "city" : "Хельсинки",
+            "airport" : "Вантаа (HEL)",
+            "latitude" : 60.317222, 	
+            "longitude" : 24.963333,
+            "price" : 100,
+            "currency" : "евро"
+        },
+        { 
+            "country" : "Россия",
+            "city" : "Москва",
+            "airport" : "Домодедово (DME)",
+            "latitude" : 55.408786, 	 	
+            "longitude" : 37.906314,
+            "price" : 3000,
+            "currency" : "руб."
+        }
+    ]
+}
